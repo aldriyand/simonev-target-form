@@ -1,0 +1,118 @@
+.vertical-center {
+    min-height: 100%;
+    /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh;
+    /* These two lines are counted as one :-)       */
+
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+@media screen and (min-width:1920px) {
+    .reCAPTCHA-regis{
+        bottom: 0;
+        position: absolute;
+        width: 68%;
+    }
+}
+
+.background-login{
+    -moz-background-size: cover;
+    -webkit-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: center;
+}
+
+.numberCircle {
+    display: inline-block;
+    border-radius: 50%;
+    border: 2px solid;
+    font-size: 32px;
+}
+
+.numberCircle:before,
+.numberCircle:after {
+    content: '\200B';
+    display: inline-block;
+    line-height: 0px;
+    padding-top: 50%;
+    padding-bottom: 50%;
+}
+
+.numberCircle:before {
+    padding-left: 8px;
+}
+
+.numberCircle:after {
+    padding-right: 8px;
+}
+
+.btn-circle.btn-sm {
+    width: 30px;
+    height: 30px;
+    padding: 6px 0px;
+    border-radius: 15px;
+    font-size: 8px;
+    text-align: center;
+}
+.btn-circle.btn-md {
+    width: 50px;
+    height: 50px;
+    padding: 0px 7px;
+    border-radius: 25px;
+    font-size: 30px;
+    text-align: center;
+}
+.btn-circle.btn-xl {
+    width: 70px;
+    height: 70px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 12px;
+    text-align: center;
+}
+
+.btn-primary{
+    background-color: #1CA04E !important;
+    border-color: #1CA04E !important;
+}
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:visited,
+.btn-primary:focus {
+  background-color: #178240 !important;
+  border-color: #178240 !important;
+}
+
+.bg-primary1{
+    background-color: #1CA04E !important;
+    border-color: #1CA04E !important;
+}
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgb(0 0 0 / 13%);
+    color: white;
+    text-align: center;
+    font-size: smaller;
+}
+
+    .regisphone{
+        display: grid;
+    }
+
+
+@media only screen and (max-width: 600px) {
+    .regisphone{
+        display: none;
+    }
+
+    /* .footer{
+        position: relative;
+    } */
+}
