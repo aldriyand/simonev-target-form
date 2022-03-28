@@ -31,4 +31,11 @@ class KegiatanModel extends Model
             ->query("select id_kegiatan, nm_kgtn from kegiatan where id_program = '$id_program'")
             ->getResult();
     }
+
+    public function get_kegiatan($id_kegiatan)
+    {
+        return $this->db
+            ->query("select nm_kgtn from kegiatan where id_kegiatan = '$id_kegiatan'")
+            ->getFirstRow();
+    }
 }

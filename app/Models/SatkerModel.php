@@ -31,4 +31,11 @@ class SatkerModel extends Model
             ->query('select id_satker, nm_satker from satker where id_satker not in (select id_satker from target)')
             ->getResult();
     }
+
+    public function get_satker($id_satker)
+    {
+        return $this->db
+            ->query("select nm_satker from satker where id_satker = '$id_satker'")
+            ->getFirstRow();
+    }
 }

@@ -31,4 +31,11 @@ class ProgramModel extends Model
             ->query('select id_program, nm_prog from program')
             ->getResult();
     }
+
+    public function get_program($id_program)
+    {
+        return $this->db
+            ->query("select nm_prog from program where id_program = '$id_program'")
+            ->getFirstRow();
+    }
 }

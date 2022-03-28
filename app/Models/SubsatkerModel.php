@@ -31,4 +31,11 @@ class SubsatkerModel extends Model
             ->query("select id_subsatker, nm_subsatker from subsatker where id_satker = '$id_satker'")
             ->getResult();
     }
+
+    public function get_subsatker($id_subsatker)
+    {
+        return $this->db
+            ->query("select nm_subsatker from subsatker where id_subsatker = '$id_subsatker'")
+            ->getFirstRow();
+    }
 }

@@ -30,4 +30,11 @@ class SubkegiatanModel extends Model
             ->query("select id_subkegiatan, nm_sub_kgtn from subkegiatan where id_kegiatan = '$id_kegiatan'")
             ->getResult();
     }
+
+    public function get_subkegiatan($id_subkegiatan)
+    {
+        return $this->db
+            ->query("select nm_sub_kgtn from subkegiatan where id_subkegiatan = '$id_subkegiatan'")
+            ->getFirstRow();
+    }
 }

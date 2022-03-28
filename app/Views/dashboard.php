@@ -460,26 +460,34 @@
                 dataType: "JSON",
                 success: function(data) {
                     console.log(data);
-                    $('[name="id_target"]').val(data.id_target);
-                    $('[name="id_satker"] select').val(data.id_satker);
-                    $('[name="id_subsatker select"]').val(data.id_subsatker);
-                    $('[name="id_program"] select').val(data.id_program);
-                    $('[name="id_subkegiatan select"]').val(data.id_subkegiatan);
-                    $('[name="id_rekening"] select').val(data.id_rekning);
-                    $('[name="nm_rekening"]').val(data.nm_rekening);
-                    $('[name="jml_pagu"]').val(data.jml_pagu);
-                    $('[name="bulan_1"]').val(data.bulan_1);
-                    $('[name="bulan_2"]').val(data.bulan_2);
-                    $('[name="bulan_3"]').val(data.bulan_3);
-                    $('[name="bulan_4"]').val(data.bulan_4);
-                    $('[name="bulan_5"]').val(data.bulan_5);
-                    $('[name="bulan_6"]').val(data.bulan_6);
-                    $('[name="bulan_7"]').val(data.bulan_7);
-                    $('[name="bulan_8"]').val(data.bulan_8);
-                    $('[name="bulan_9"]').val(data.bulan_9);
-                    $('[name="bulan_10"]').val(data.bulan_10);
-                    $('[name="bulan_11"]').val(data.bulan_11);
-                    $('[name="bulan_12"]').val(data.bulan_12);
+
+                    $('#satker').html('<option value="'+data['target'].id_satker+'">'+data['satker'].nm_satker+'</option>');
+                    $('#subsatker').html('<option value="'+data['target'].id_subsatker+'">'+data['subsatker'].nm_subsatker+'</option>');
+                    $('#program').html('<option value="'+data['target'].id_program+'">'+data['program'].nm_prog+'</option>')
+                    $('#kegiatan').html('<option value="'+data['target'].id_kegiatan+'">'+data['kegiatan'].nm_kgtn+'</option>')
+                    $('#subkegiatan').html('<option value="'+data['target'].id_subkegiatan+'">'+data['subkegiatan'].nm_sub_kgtn+'</option>')
+                    $('#rekening').html('<option value="'+data['target'].id_rekning+'">'+data['target'].id_rekning+'</option>')
+
+                    $('[name="id_target"]').val(data['target'].id_target);
+                    $('[name="id_satker"] select').val(data['target'].id_satker);
+                    $('[name="id_subsatker select"]').val(data['target'].id_subsatker);
+                    $('[name="id_program"] select').val(data['target'].id_program);
+                    $('[name="id_subkegiatan select"]').val(data['target'].id_subkegiatan);
+                    $('[name="id_rekening"] select').val(data['target'].id_rekning);
+                    $('[name="nm_rekening"]').val(data['target'].nm_rekening);
+                    $('[name="jml_pagu"]').val(data['target'].jml_pagu);
+                    $('[name="bulan_1"]').val(data['target'].bulan_1);
+                    $('[name="bulan_2"]').val(data['target'].bulan_2);
+                    $('[name="bulan_3"]').val(data['target'].bulan_3);
+                    $('[name="bulan_4"]').val(data['target'].bulan_4);
+                    $('[name="bulan_5"]').val(data['target'].bulan_5);
+                    $('[name="bulan_6"]').val(data['target'].bulan_6);
+                    $('[name="bulan_7"]').val(data['target'].bulan_7);
+                    $('[name="bulan_8"]').val(data['target'].bulan_8);
+                    $('[name="bulan_9"]').val(data['target'].bulan_9);
+                    $('[name="bulan_10"]').val(data['target'].bulan_10);
+                    $('[name="bulan_11"]').val(data['target'].bulan_11);
+                    $('[name="bulan_12"]').val(data['target'].bulan_12);
                     $('#modal_form').modal('show');
                     $('.modal-title').text('Edit Target');
                 },

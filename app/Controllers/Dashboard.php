@@ -115,7 +115,13 @@ class Dashboard extends BaseController
     {
         $this->target_model = new TargetModel();
 
-        $data = $this->target_model->get_by_id($id_target);
+        $result = $this->target_model->get_by_id($id_target);
+        $data['target'] = $result;
+        $data['satker'] = $this->satker_model->get_satker($result->id_satker);
+        $data['subsatker'] = $this->subsatker_model->get_subsatker($result->id_subsatker);
+        $data['program'] = $this->program_model->get_program($result->id_program);
+        $data['kegiatan'] = $this->kegiatan_model->get_kegiatan($result->id_kegiatan);
+        $data['subkegiatan'] = $this->subkegiatan_model->get_subkegiatan($result->id_subkegiatan);
 
         echo json_encode($data);
     }
