@@ -337,9 +337,10 @@
 
             $('#subsatker').on('change', function() {
                 var idSubsatker = $(this).val();
+                var idSatker = $('#satker option:selected').val();
                 if (idSubsatker) {
                     $.ajax({
-                        url: "<?php echo site_url('dashboard/fetch_program/') ?>",
+                        url: "<?php echo site_url('dashboard/fetch_program/') ?>" + idSatker + "/" + idSubsatker,
                         type: 'GET',
                         success: function(data) {
                             $('#program').html('<option value="">Select One</option>' + data)

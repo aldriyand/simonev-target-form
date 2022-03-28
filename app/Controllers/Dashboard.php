@@ -66,15 +66,20 @@ class Dashboard extends BaseController
     public function fetch_subsatker($id_satker)
     {
         $subsatkers = $this->subsatker_model->get_subsatker_by_id_satker($id_satker);
+        if (!$subsatkers) {
+            $subsatkers = $this->kinerja_model->get_satker_with_no_subsatker($id_satker);
+        }
+
         foreach ($subsatkers as $item) {
             echo "<option value='$item->id_subsatker'>$item->nm_subsatker</option>";
         }
+        
         // echo json_encode($subsatkers);
     }
 
-    public function fetch_program()
+    public function fetch_program($id_satker, $id_subsatker)
     {
-        $programs = $this->program_model->get_all_program();
+        $programs = $this->program_model->get_all_program($id_satker, $id_subsatker);
         foreach ($programs as $item) {
             echo "<option value='$item->id_program'>$item->nm_prog</option>";
         }

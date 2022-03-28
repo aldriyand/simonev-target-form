@@ -30,4 +30,11 @@ class KinerjaModel extends Model
             ->query("select jml_pagu from kinerja where id_subsatker = '$id_subsatker' and id_rekening = '$id_rekening'")
             ->getFirstRow();
     }
+
+    public function get_satker_with_no_subsatker($id_satker)
+    {
+        return $this->db
+            ->query("select distinct k.id_subsatker, s.singkatan as nm_subsatker from kinerja as k join satker as s on k.id_satker = s.id_satker where k.id_satker = '$id_satker'")
+            ->getResult();
+    }
 }

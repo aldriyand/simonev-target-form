@@ -25,10 +25,10 @@ class ProgramModel extends Model
             ->getResult();
     }
 
-    public function get_all_program()
+    public function get_all_program($id_satker, $id_subsatker)
     {
         return $this->db
-            ->query('select id_program, nm_prog from program')
+            ->query("select distinct p.id_program, p.nm_prog from program as p join kinerja as k on p.id_program = k.id_program where k.id_satker = '$id_satker' and k.id_subsatker = '$id_subsatker'")
             ->getResult();
     }
 
